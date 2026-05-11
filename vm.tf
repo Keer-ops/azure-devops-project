@@ -3,7 +3,7 @@ resource "azurerm_linux_virtual_machine" "frontend_vm" {
   resource_group_name = azurerm_resource_group.rg.name
   location            = azurerm_resource_group.rg.location
 
-  size = "Standard_B1s"
+  size = "Standard_A1_v2"
 
   admin_username = "azureuser"
 
@@ -13,7 +13,7 @@ resource "azurerm_linux_virtual_machine" "frontend_vm" {
 
   admin_ssh_key {
   username   = "azureuser"
-  public_key = file("${path.module}/ssh/id_ed25519.pub")
+  public_key = file("${path.module}/ssh/id_ed25519.pub"))
 }
 
   os_disk {
@@ -22,10 +22,10 @@ resource "azurerm_linux_virtual_machine" "frontend_vm" {
   }
 
   source_image_reference {
-    publisher = "Canonical"
-    offer     = "0001-com-ubuntu-server-jammy"
-    sku       = "22_04-lts-gen2"
-    version   = "latest"
+  publisher = "Canonical"
+  offer     = "UbuntuServer"
+  sku       = "18.04-LTS"
+  version   = "latest"
   }
 }
 
@@ -34,7 +34,7 @@ resource "azurerm_linux_virtual_machine" "backend_vm" {
   resource_group_name = azurerm_resource_group.rg.name
   location            = azurerm_resource_group.rg.location
 
-  size = "Standard_B1s"
+  size = "Standard_A1_v2"
 
   admin_username = "azureuser"
 
@@ -53,9 +53,9 @@ resource "azurerm_linux_virtual_machine" "backend_vm" {
   }
 
   source_image_reference {
-    publisher = "Canonical"
-    offer     = "0001-com-ubuntu-server-jammy"
-    sku       = "22_04-lts-gen2"
-    version   = "latest"
+  publisher = "Canonical"
+  offer     = "UbuntuServer"
+  sku       = "18.04-LTS"
+  version   = "latest"
   }
 }
