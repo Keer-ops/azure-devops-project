@@ -13,7 +13,7 @@ resource "azurerm_linux_virtual_machine" "frontend_vm" {
 
   admin_ssh_key {
   username   = "azureuser"
-  public_key =  file("${path.module}/ssh/id_ed25519.pub")
+  public_key = file("${path.module}/ssh/id_ed25519.pub")
 }
 
   os_disk {
@@ -44,7 +44,7 @@ resource "azurerm_linux_virtual_machine" "backend_vm" {
 
   admin_ssh_key {
   username   = "azureuser"
-  public_key =  file("${path.module}/ssh/id_ed25519.pub")
+  public_key = file("${path.module}/ssh/id_ed25519.pub")
 }
 
   os_disk {
